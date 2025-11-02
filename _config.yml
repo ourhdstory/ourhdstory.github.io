@@ -1,0 +1,8 @@
+title: "Our HD Story"
+email: "youremail@example.com"
+description: "A blog about our adventures, milestones, and projects."
+baseurl: ""
+url: "https://ourhdstory.com"
+theme: minima
+plugins:
+  - jekyll-feed

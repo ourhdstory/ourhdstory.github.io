@@ -1,161 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our HD Story</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --brown: rgb(80,71,65);
-      --orange: rgb(218,159,108);
-      --blue: rgb(195,212,233);
-      --green: rgb(101,116,72);
-    }
+---
+layout: default
+title: Home
+---
+<section class="intro">
+  <p>Welcome to Our HD Story — a place to share our adventures, milestones, and projects as we build our life together.</p>
+</section>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--blue);
-      color: var(--brown);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--brown);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: var(--orange);
-    }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--orange);
-    }
-
-    main {
-      padding: 3rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-      background-color: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--green);
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--orange);
-      display: inline-block;
-    }
-
-    .intro {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .blog-preview {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .post-card {
-      background-color: var(--blue);
-      border-radius: 0.5rem;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .post-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .post-card h3 {
-      color: var(--brown);
-      margin-bottom: 0.5rem;
-    }
-
-    .post-card p {
-      font-size: 0.9rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: white;
-      background-color: var(--brown);
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Our HD Story</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#blog">Blog</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="home">
-    <section class="intro">
-      <p>Welcome to Our HD Story — a place to share our adventures, milestones, and projects as we build our life together.</p>
-    </section>
-
-    <section id="blog">
-      <h2>Latest Adventures</h2>
-      <div class="blog-preview">
-        <div class="post-card">
-          <h3>Exploring Japan</h3>
-          <p>Our first stop after the wedding was Japan — filled with cherry blossoms, ramen, and unforgettable moments.</p>
-        </div>
-        <div class="post-card">
-          <h3>New Zealand Road Trip</h3>
-          <p>A two-week honeymoon adventure through the South Island — mountains, lakes, and endless scenic drives.</p>
-        </div>
-        <div class="post-card">
-          <h3>First Year of Chickens</h3>
-          <p>From coop building to collecting our first eggs — backyard farming has been an unexpected joy!</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Our HD Story — Built with love.</p>
-  </footer>
-</body>
-</html>
+<section id="blog">
+  <h2>Latest Adventures</h2>
+  <div class="blog-preview">
+    <div class="post-card">
+      <h3>Exploring Japan</h3>
+      <p>Our first stop after the wedding was Japan — filled with cherry blossoms, ramen, and unforgettable moments.</p>
+    </div>
+    <div class="post-card">
+      <h3>New Zealand Road Trip</h3>
+      <p>A two-week honeymoon adventure through the South Island — mountains, lakes, and endless scenic drives.</p>
+    </div>
+    <div class="post-card">
+      <h3>First Year of Chickens</h3>
+      <p>From coop building to collecting our first eggs — backyard farming has been an unexpected joy!</p>
+    </div>
+  </div>
+</section>
