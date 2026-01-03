@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies
+node_modules/
+.bundle/
+vendor/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Environment
+.env
+.env.local
+
+# OS
+Thumbs.db
