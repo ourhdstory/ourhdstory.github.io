@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Blog
+title: Projects
 ---
 
 <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <h2 class="text-4xl font-bold text-slate-900 mb-12">Our Stories</h2>
+  <h2 class="text-4xl font-bold text-slate-900 mb-4">Our Projects</h2>
+  <p class="text-lg text-slate-600 leading-relaxed mb-12">From home renovations to backyard farms, here are the projects we've tackled together. DIY adventures, lessons learned, and the joy of creating something with our own hands.</p>
   
   <div class="space-y-8">
     {% for post in site.posts %}
-      {% if post.categories contains "blog" %}
+      {% if post.categories contains "projects" %}
         <article class="pb-8 border-b border-slate-200 last:border-b-0">
           <h3 class="text-2xl font-bold text-slate-900 mb-2">
             <a href="{{ post.url }}" class="hover:text-blue-600 transition">{{ post.title }}</a>

@@ -2,7 +2,7 @@
 layout: post
 title: "New Zealand Honeymoon: Adventure in Paradise"
 date: 2025-10-15
-categories: travel honeymoon
+categories: travel
 ---
 
 Our New Zealand honeymoon was everything we dreamed of and more - a perfect blend of adventure, relaxation, and breathtaking landscapes. Here's a recap of our incredible two-week journey through Middle Earth!

@@ -8,9 +8,10 @@ This is a personal blog and portfolio site for Derek and Hannah, featuring trave
 
 ## Tech Stack
 
-- **Static Site Generator**: Jekyll
+- **Static Site Generator**: Jekyll 4.3+
 - **Styling**: Tailwind CSS (via CDN)
-- **Fonts**: Google Fonts (Playfair Display, Inter)
+- **Fonts**: Google Fonts (Playfair Display for headings, Inter for body)
+- **Forms**: Formspree for email subscriptions
 - **Hosting**: GitHub Pages
 - **Domain**: Custom domain via CNAME
 
@@ -18,21 +19,28 @@ This is a personal blog and portfolio site for Derek and Hannah, featuring trave
 
 ```
 .
-├── index.html              # Home page
-├── about.html              # About us page
-├── contact.html            # Contact form
+├── index.html              # Home page with hero, latest adventures, and email subscription
 ├── gallery.html            # Photo gallery
-├── blog/                   # Blog index
-├── _posts/                 # Blog post content
+├── travel/                 # Travel blog posts
+│   └── index.html          # Travel posts index (filtered by category)
+├── projects/               # Projects blog posts
+│   └── index.html          # Projects posts index (filtered by category)
+├── blog/                   # General blog posts
+│   └── index.html          # Blog posts index (filtered by category)
+├── _posts/                 # All blog posts (organized by category)
 ├── _layouts/               # Page templates
-├── _includes/              # Reusable components (header, footer)
+├── _includes/              # Reusable components
+│   ├── header.html         # Site header and navigation
+│   └── footer.html         # Site footer
 ├── assets/
 │   ├── css/
 │   │   └── custom.css      # Custom styles for hero sections and blog
 │   ├── images/             # Image assets
 │   ├── js/                 # JavaScript files
+│   │   └── main.js         # Main JavaScript
 │   └── fonts/              # Custom fonts (if self-hosted)
 ├── _config.yml             # Jekyll configuration
+├── Gemfile                 # Ruby dependencies
 └── .gitignore              # Git ignore rules
 ```
 
@@ -72,11 +80,11 @@ To create a new blog post, create a new file in the `_posts/` directory followin
 _posts/YYYY-MM-DD-post-title.md
 ```
 
-Example:
+Example with category:
 ```markdown
 ---
 layout: post
-title: "My Amazing Adventure"
+title: "My Amazing Travel Story"
 date: 2025-01-15
 categories: travel
 ---
@@ -84,25 +92,48 @@ categories: travel
 Your post content goes here...
 ```
 
+### Post Categories
+
+Posts are organized by category. Choose one of the following:
+
+- **travel** - Travel adventures and destination posts (appears at `/travel/`)
+- **projects** - Home projects, DIY, and improvements (appears at `/projects/`)
+- **blog** - General stories and reflections (appears at `/blog/`)
+
+Posts automatically appear on their category page and in the navigation menu.
+
 ## Customization
 
 ### Colors & Typography
 
-- Edit `_layouts/default.html` to modify the font choices and base Tailwind CSS configuration
-- Edit `assets/css/custom.css` for custom component styles
+- Edit `_layouts/default.html` to modify the font choices and Tailwind CSS configuration
+- Edit `assets/css/custom.css` for custom component styles (hero section, blog post styling, etc.)
+
+### Navigation
+
+Update navigation links in `_includes/header.html`:
+- Home
+- Travel
+- Projects
+- Gallery
+- Blog
+
+### Email Subscription Form
+
+The email subscription form is located on the home page (`index.html`). It uses Formspree to collect emails.
+
+To update the form endpoint:
+1. Get your Formspree form ID from https://formspree.io
+2. Update the `action` attribute in the form: `action="https://formspree.io/f/YOUR_FORM_ID"`
 
 ### Site Configuration
 
 Update `_config.yml` to change:
-- Site title
-- Email
-- Description
-- Base URL
-- Site URL
-
-### Pages
-
-All main pages (home, about, contact, gallery) are in the root directory as HTML files. Edit them as needed with Tailwind CSS classes.
+- `title` - Site title
+- `email` - Email address
+- `description` - Site description
+- `baseurl` - Base URL path
+- `url` - Full site URL
 
 ## Deployment
 

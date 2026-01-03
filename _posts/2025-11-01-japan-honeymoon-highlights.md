@@ -2,6 +2,7 @@
 layout: default
 title: "Japan Honeymoon Highlights"
 date: 2025-11-01
+categories: travel
 ---
 
 Our first honeymoon adventure took us to **Japan**, where we explored cherry blossoms, temples, and some of the best food of our lives.  
