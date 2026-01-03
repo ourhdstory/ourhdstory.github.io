@@ -3,13 +3,19 @@ layout: default
 title: Blog
 ---
 
-<h2>Our Stories</h2>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
-      <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-    </li>
-  {% endfor %}
-</ul>
+<div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+  <h2 class="text-4xl font-bold text-slate-900 mb-12">Our Stories</h2>
+  
+  <div class="space-y-8">
+    {% for post in site.posts %}
+      <article class="pb-8 border-b border-slate-200 last:border-b-0">
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">
+          <a href="{{ post.url }}" class="hover:text-blue-600 transition">{{ post.title }}</a>
+        </h3>
+        <p class="text-sm text-slate-500 mb-4">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="text-slate-600 leading-relaxed">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        <a href="{{ post.url }}" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">Read More →</a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
