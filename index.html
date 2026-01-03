@@ -35,3 +35,44 @@ title: Home
     </div>
   </div>
 </section>
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-4xl font-bold text-slate-900 mb-6">Subscribe to Our Story</h2>
+    <p class="text-lg text-slate-600 leading-relaxed mb-8">Get the latest updates on our adventures, projects, and travels delivered straight to your inbox.</p>
+    
+    <form action="https://formspree.io/f/xvzgwrej" method="POST" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-slate-900 mb-2">Name</label>
+        <input type="text" name="name" id="name" required class="w-full px-4 py-2 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+      </div>
+      
+      <div>
+        <label for="email" class="block text-sm font-medium text-slate-900 mb-2">Email Address</label>
+        <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+      </div>
+      
+      <div>
+        <fieldset>
+          <legend class="text-sm font-medium text-slate-900 mb-3">What are you interested in?</legend>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="checkbox" name="interests" value="Travel" class="w-4 h-4 rounded border-slate-300">
+              <span class="ml-2 text-slate-700">Travel & Adventures</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="interests" value="Home Projects" class="w-4 h-4 rounded border-slate-300">
+              <span class="ml-2 text-slate-700">Home Projects</span>
+            </label>
+            <label class="flex items-center">
+              <input type="checkbox" name="interests" value="All" class="w-4 h-4 rounded border-slate-300">
+              <span class="ml-2 text-slate-700">Everything</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <button type="submit" class="w-full bg-slate-900 text-white font-medium py-2 px-4 rounded-lg hover:bg-slate-800 transition">Subscribe</button>
+    </form>
+  </div>
+</section>
