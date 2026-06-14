@@ -1,0 +1,20 @@
+{%- assign post = include.post -%}
+{%- assign cat = post.categories | first -%}
+<a href="{{ post.url }}" class="card reveal">
+  <div class="card-media {% unless post.cover %}card-media--empty{% endunless %}">
+    {% if post.cover %}
+      <img src="{{ post.cover }}" alt="{{ post.title | escape }}" loading="lazy">
+    {% else %}
+      <span aria-hidden="true">{{ post.title | slice: 0 }}</span>
+    {% endif %}
+    {% if cat %}<span class="chip">{{ cat }}</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <p class="card-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <h3>{{ post.title }}</h3>
+    <p class="card-excerpt">{{ post.excerpt | default: post.content | strip_html | truncate: 130 }}</p>
+    <div class="card-foot">
+      <span class="link-arrow">Read story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </div>
+</a>

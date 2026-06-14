@@ -3,6 +3,7 @@ layout: post
 title: "Creating Our Website with Lightweight AI Tools"
 date: 2025-01-13
 categories: projects
+excerpt: "How we built this little corner of the internet using lightweight AI tools — and what we learned along the way."
 ---
 
 ## A Modern Approach to Building Our Online Home

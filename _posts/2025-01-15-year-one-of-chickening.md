@@ -3,6 +3,7 @@ layout: post
 title: "Year One of Chickening: Lessons from Our Backyard"
 date: 2025-01-15
 categories: projects
+excerpt: "From coop-building to collecting our first eggs — a year of backyard chicken-keeping and the lessons it taught us."
 ---
 
 ## From Zero to Feathered Friends

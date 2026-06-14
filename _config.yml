@@ -1,5 +1,26 @@
 title: "Our HD Story"
-email: "youremail@example.com"
-description: "A blog about our adventures, milestones, and projects."
+tagline: "Adventures, projects & the moments that make our story ours"
+description: "Derek & Hannah share their adventures, travels, and home projects — from honeymoons in Japan and New Zealand to backyard chickens in West Seattle."
+author: "Derek & Hannah"
+email: "hello@ourhdstory.com"
 baseurl: ""
 url: "https://ourhdstory.com"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Default front-matter so every post gets the post layout
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

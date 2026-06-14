@@ -1,47 +1,32 @@
 ---
 layout: default
 title: Gallery
+description: "A visual scrapbook of our favorite moments — engagement, wedding, and travels."
 ---
 
-<div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <h2 class="text-4xl font-bold text-slate-900 mb-4">Photo Gallery</h2>
-  <p class="text-lg text-slate-600 leading-relaxed mb-12">Explore our favorite moments from different events and travels.</p>
+<section class="section">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="eyebrow mb-2">Through the lens</p>
+      <h2>Photo Gallery</h2>
+      <p>A visual scrapbook of our favorite moments — from quiet mornings to far-flung adventures.</p>
+    </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-    <div class="group">
-      <div class="bg-slate-200 rounded-lg overflow-hidden h-64 mb-4">
-        <a href="/assets/images/engagement1.jpg" class="block w-full h-full">
-          <img src="/assets/images/engagement1-thumb.jpg" alt="Engagement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </a>
+    {% assign shots = site.posts | where_exp: "p", "p.cover" %}
+    {% if shots.size > 0 %}
+      <div class="gallery-grid">
+        {% for post in shots %}
+          <a href="{{ post.url }}" class="gallery-item reveal">
+            <img src="{{ post.cover }}" alt="{{ post.title | escape }}" loading="lazy">
+            <span class="cap">{{ post.title }}</span>
+          </a>
+        {% endfor %}
       </div>
-      <h3 class="text-xl font-bold text-slate-900">Engagement</h3>
-    </div>
-    
-    <div class="group">
-      <div class="bg-slate-200 rounded-lg overflow-hidden h-64 mb-4">
-        <a href="/assets/images/wedding1.jpg" class="block w-full h-full">
-          <img src="/assets/images/wedding1-thumb.jpg" alt="Wedding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </a>
+    {% else %}
+      <div class="reveal rounded-[22px] border border-dashed p-12 text-center" style="border-color:var(--border)">
+        <p class="text-2xl mb-3" style="font-family:'Fraunces',serif">The gallery is coming soon 📸</p>
+        <p style="color:var(--text-muted)">Once we add cover photos to our stories, they'll appear here automatically.</p>
       </div>
-      <h3 class="text-xl font-bold text-slate-900">Wedding</h3>
-    </div>
-    
-    <div class="group">
-      <div class="bg-slate-200 rounded-lg overflow-hidden h-64 mb-4">
-        <a href="/assets/images/japan1.jpg" class="block w-full h-full">
-          <img src="/assets/images/japan1-thumb.jpg" alt="Japan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </a>
-      </div>
-      <h3 class="text-xl font-bold text-slate-900">Japan Honeymoon</h3>
-    </div>
-    
-    <div class="group">
-      <div class="bg-slate-200 rounded-lg overflow-hidden h-64 mb-4">
-        <a href="/assets/images/nz1.jpg" class="block w-full h-full">
-          <img src="/assets/images/nz1-thumb.jpg" alt="New Zealand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </a>
-      </div>
-      <h3 class="text-xl font-bold text-slate-900">New Zealand Honeymoon</h3>
-    </div>
+    {% endif %}
   </div>
-</div>
+</section>

@@ -1,24 +1,42 @@
-<header class="sticky top-0 z-50 bg-white shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center justify-between">
-      <div class="flex-1">
-        <a href="/" class="text-3xl font-bold text-slate-900">Our HD Story</a>
-      </div>
-      <nav class="hidden md:flex space-x-8">
-        <a href="/" class="text-slate-600 hover:text-slate-900 transition">Home</a>
-        <a href="/travel/" class="text-slate-600 hover:text-slate-900 transition">Travel</a>
-        <a href="/projects/" class="text-slate-600 hover:text-slate-900 transition">Projects</a>
-        <a href="/blog/" class="text-slate-600 hover:text-slate-900 transition">Blog</a>
-        <a href="/gallery.html" class="text-slate-600 hover:text-slate-900 transition">Gallery</a>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:m-3 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="flex items-center justify-between py-4">
+      <a href="/" class="brand">
+        <span class="brand-mark">HD</span>
+        <span>Our HD Story</span>
+      </a>
+
+      {%- assign path = page.url -%}
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a href="/"          class="nav-link {% if path == '/' %}is-active{% endif %}">Home</a>
+        <a href="/travel/"   class="nav-link {% if path contains '/travel' %}is-active{% endif %}">Travel</a>
+        <a href="/projects/" class="nav-link {% if path contains '/projects' %}is-active{% endif %}">Projects</a>
+        <a href="/blog/"     class="nav-link {% if path contains '/blog' %}is-active{% endif %}">Blog</a>
+        <a href="/gallery.html" class="nav-link {% if path contains '/gallery' %}is-active{% endif %}">Gallery</a>
+        <a href="/about.html"   class="nav-link {% if path contains '/about' %}is-active{% endif %}">About</a>
       </nav>
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button class="text-slate-600 hover:text-slate-900">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+
+      <button id="menuToggle" class="md:hidden text-stone-700 p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="mobile-menu md:hidden">
+    <div>
+      <nav class="wrap flex flex-col gap-1 pb-4" aria-label="Mobile">
+        <a href="/"          class="py-2 text-lg nav-link {% if path == '/' %}is-active{% endif %}">Home</a>
+        <a href="/travel/"   class="py-2 text-lg nav-link {% if path contains '/travel' %}is-active{% endif %}">Travel</a>
+        <a href="/projects/" class="py-2 text-lg nav-link {% if path contains '/projects' %}is-active{% endif %}">Projects</a>
+        <a href="/blog/"     class="py-2 text-lg nav-link {% if path contains '/blog' %}is-active{% endif %}">Blog</a>
+        <a href="/gallery.html" class="py-2 text-lg nav-link {% if path contains '/gallery' %}is-active{% endif %}">Gallery</a>
+        <a href="/about.html"   class="py-2 text-lg nav-link {% if path contains '/about' %}is-active{% endif %}">About</a>
+      </nav>
     </div>
   </div>
 </header>

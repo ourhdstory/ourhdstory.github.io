@@ -1,78 +1,133 @@
 ---
 layout: default
 title: Home
+description: "Derek & Hannah share their adventures, travels, and home projects — from honeymoons in Japan and New Zealand to backyard chickens in West Seattle."
 ---
 
+<!-- Hero -->
 <section class="hero">
-  <img src="/assets/images/hero.jpg" alt="Derek and Hannah smiling together" />
-  <div class="hero-text">
-    <h1>Our HD Story</h1>
-    <p>Adventures, projects, and moments that make our story ours.</p>
+  <img src="/assets/images/hero.jpg" alt="Derek and Hannah smiling together" fetchpriority="high">
+  <div class="hero-inner wrap">
+    <div class="hero-text">
+      <p class="eyebrow hero-eyebrow mb-4">Derek &amp; Hannah</p>
+      <h1>Adventures, projects &amp; the moments that make our story ours.</h1>
+      <p>From honeymoons across the world to backyard chickens at home — welcome to our corner of the internet.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#latest" class="btn btn-primary">Read our stories</a>
+        <a href="/about.html" class="btn btn-ghost" style="background:rgba(255,255,255,.92)">About us</a>
+      </div>
+    </div>
   </div>
-<section class="py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-4xl font-bold text-slate-900 mb-6">Welcome</h2>
-    <p class="text-lg text-slate-600 leading-relaxed">We're Derek and Hannah — partners in life, travel, and creation. Here we share our adventures, home projects, and the memories that shape our story.</p>
-  </div>
+  <a href="#latest" class="scroll-cue" aria-label="Scroll to stories">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </section>
 
-<section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold text-slate-900 mb-12">Latest Adventures</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="post-card bg-slate-50 rounded-lg p-8 shadow-sm hover:shadow-md">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">Exploring Japan</h3>
-        <p class="text-slate-600">Cherry blossoms, ramen, and late-night trains — our honeymoon in Japan was unforgettable.</p>
+<!-- Latest stories -->
+<section id="latest" class="section">
+  <div class="wrap">
+    <div class="section-head reveal flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow mb-2">Fresh off the press</p>
+        <h2>Latest Adventures</h2>
       </div>
-      <div class="post-card bg-slate-50 rounded-lg p-8 shadow-sm hover:shadow-md">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">New Zealand Road Trip</h3>
-        <p class="text-slate-600">A two-week adventure through the South Island — mountains, lakes, and endless scenic drives.</p>
-      </div>
-      <div class="post-card bg-slate-50 rounded-lg p-8 shadow-sm hover:shadow-md">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">First Year of Chickens</h3>
-        <p class="text-slate-600">From coop building to collecting our first eggs — backyard farming has been an unexpected joy!</p>
-      </div>
+      <a href="/blog/" class="link-arrow">View all stories</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+      {% for post in site.posts limit: 3 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-2xl mx-auto">
-    <h2 class="text-4xl font-bold text-slate-900 mb-6">Subscribe to Our Story</h2>
-    <p class="text-lg text-slate-600 leading-relaxed mb-8">Get the latest updates on our adventures, projects, and travels delivered straight to your inbox.</p>
-    
-    <form action="https://formspree.io/f/xvzgwrej" method="POST" class="space-y-6">
-      <div>
-        <label for="name" class="block text-sm font-medium text-slate-900 mb-2">Name</label>
-        <input type="text" name="name" id="name" required class="w-full px-4 py-2 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+<!-- Explore by theme -->
+<section class="section section--band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow mb-2">Wander around</p>
+      <h2>Explore by theme</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-7">
+      <a href="/travel/" class="card reveal">
+        <div class="card-body">
+          <span class="text-3xl">🌏</span>
+          <h3 class="mt-2">Travel</h3>
+          <p class="card-excerpt">Honeymoons in Japan &amp; New Zealand, and everywhere the road takes us.</p>
+          <div class="card-foot"><span class="link-arrow">Explore travel →</span></div>
+        </div>
+      </a>
+      <a href="/projects/" class="card reveal">
+        <div class="card-body">
+          <span class="text-3xl">🔨</span>
+          <h3 class="mt-2">Projects</h3>
+          <p class="card-excerpt">Home renovations, backyard chickens, and DIY adventures big and small.</p>
+          <div class="card-foot"><span class="link-arrow">Explore projects →</span></div>
+        </div>
+      </a>
+      <a href="/blog/" class="card reveal">
+        <div class="card-body">
+          <span class="text-3xl">📖</span>
+          <h3 class="mt-2">Reflections</h3>
+          <p class="card-excerpt">Year-in-review reflections and the milestones in between.</p>
+          <div class="card-foot"><span class="link-arrow">Read the blog →</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About teaser -->
+<section class="section">
+  <div class="wrap grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <p class="eyebrow mb-2">Hello there</p>
+      <h2 class="text-4xl mb-5">We're Derek &amp; Hannah</h2>
+      <p class="text-lg leading-relaxed" style="color:var(--text-muted)">
+        Partners in life, travel, and creation. We met over green tea desserts in Seattle,
+        got engaged in a Mexican cenote, married in Hawaii, and now share a home (and a flock of
+        chickens) in West Seattle. This is where we keep the memories that shape our story.
+      </p>
+      <a href="/about.html" class="btn btn-ghost mt-7">Our full story</a>
+    </div>
+    <div class="reveal rounded-[22px] overflow-hidden" style="box-shadow:var(--shadow-md)">
+      <img src="/assets/images/hero.jpg" alt="Derek and Hannah" class="w-full h-full object-cover" style="aspect-ratio:4/3" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe -->
+<section id="subscribe" class="section section--band">
+  <div class="wrap-narrow">
+    <div class="reveal text-center mb-10">
+      <p class="eyebrow mb-2">Don't miss a moment</p>
+      <h2 class="text-4xl mb-4">Subscribe to our story</h2>
+      <p class="text-lg" style="color:var(--text-muted)">Get new adventures, projects, and travels delivered to your inbox — only when there's something worth sharing.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xvzgwrej" method="POST" class="reveal space-y-5 max-w-xl mx-auto">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="name" class="block text-sm font-medium mb-2">Name</label>
+          <input type="text" name="name" id="name" required class="field" placeholder="Your name">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-2">Email address</label>
+          <input type="email" name="email" id="email" required class="field" placeholder="you@email.com">
+        </div>
       </div>
-      
-      <div>
-        <label for="email" class="block text-sm font-medium text-slate-900 mb-2">Email Address</label>
-        <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
-      </div>
-      
-      <div>
-        <fieldset>
-          <legend class="text-sm font-medium text-slate-900 mb-3">What are you interested in?</legend>
-          <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" name="interests" value="Travel" class="w-4 h-4 rounded border-slate-300">
-              <span class="ml-2 text-slate-700">Travel & Adventures</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" name="interests" value="Home Projects" class="w-4 h-4 rounded border-slate-300">
-              <span class="ml-2 text-slate-700">Home Projects</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" name="interests" value="All" class="w-4 h-4 rounded border-slate-300">
-              <span class="ml-2 text-slate-700">Everything</span>
-            </label>
-          </div>
-        </fieldset>
-      </div>
-      
-      <button type="submit" class="w-full bg-slate-900 text-white font-medium py-2 px-4 rounded-lg hover:bg-slate-800 transition">Subscribe</button>
+
+      <fieldset>
+        <legend class="block text-sm font-medium mb-3">What are you interested in?</legend>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <label class="check"><input type="checkbox" name="interests" value="Travel"><span>Travel</span></label>
+          <label class="check"><input type="checkbox" name="interests" value="Home Projects"><span>Projects</span></label>
+          <label class="check"><input type="checkbox" name="interests" value="All"><span>Everything</span></label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary w-full justify-center text-base py-3">Subscribe</button>
     </form>
   </div>
 </section>

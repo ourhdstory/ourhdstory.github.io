@@ -1,24 +1,24 @@
 ---
 layout: default
 title: Projects
+description: "Home renovations, backyard chickens, and DIY adventures from Derek & Hannah."
 ---
 
-<div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-  <h2 class="text-4xl font-bold text-slate-900 mb-4">Our Projects</h2>
-  <p class="text-lg text-slate-600 leading-relaxed mb-12">From home renovations to backyard farms, here are the projects we've tackled together. DIY adventures, lessons learned, and the joy of creating something with our own hands.</p>
-  
-  <div class="space-y-8">
-    {% for post in site.posts %}
-      {% if post.categories contains "projects" %}
-        <article class="pb-8 border-b border-slate-200 last:border-b-0">
-          <h3 class="text-2xl font-bold text-slate-900 mb-2">
-            <a href="{{ post.url }}" class="hover:text-blue-600 transition">{{ post.title }}</a>
-          </h3>
-          <p class="text-sm text-slate-500 mb-4">{{ post.date | date: "%B %d, %Y" }}</p>
-          <p class="text-slate-600 leading-relaxed">{{ post.excerpt | strip_html | truncate: 200 }}</p>
-          <a href="{{ post.url }}" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">Read More →</a>
-        </article>
-      {% endif %}
-    {% endfor %}
+<section class="section">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="eyebrow mb-2">Made by hand</p>
+      <h2>Our Projects</h2>
+      <p>From home renovations to backyard farms, here are the projects we've tackled together. DIY adventures, lessons learned, and the joy of creating something with our own hands.</p>
+    </header>
+
+    {% assign posts = site.posts | where_exp: "p", "p.categories contains 'projects'" %}
+    {% if posts.size > 0 %}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        {% for post in posts %}{% include post-card.html post=post %}{% endfor %}
+      </div>
+    {% else %}
+      <p class="text-lg" style="color:var(--text-muted)">No projects here just yet — check back soon.</p>
+    {% endif %}
   </div>
-</div>
+</section>

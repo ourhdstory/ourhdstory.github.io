@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{%- assign cat = page.categories | first -%}
+
+<article>
+  {% if page.cover %}
+    <div class="post-hero">
+      <img src="{{ page.cover }}" alt="{{ page.title | escape }}">
+      <div class="post-hero-text">
+        <div class="wrap-narrow">
+          {% if cat %}<span class="chip">{{ cat }}</span>{% endif %}
+          <h1 class="mt-4">{{ page.title }}</h1>
+          <div class="post-meta">
+            <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+            <span class="dot"></span>
+            <span>{{ content | strip_html | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <header class="wrap-narrow pt-16 pb-2">
+      {% if cat %}<span class="chip">{{ cat }}</span>{% endif %}
+      <h1 class="mt-4 text-4xl sm:text-5xl leading-tight">{{ page.title }}</h1>
+      <div class="post-meta">
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+        <span class="dot"></span>
+        <span>{{ content | strip_html | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+      </div>
+      <hr class="mt-8 border-t" style="border-color:var(--border)">
+    </header>
+  {% endif %}
+
+  <div class="wrap-narrow py-12 prose">
+    {{ content }}
+  </div>
+
+  <!-- Prev / next -->
+  <div class="wrap-narrow pb-20">
+    <hr class="mb-10" style="border-top:1px solid var(--border)">
+    <div class="post-nav">
+      {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="prev">
+          <span class="dir">← Previous</span>
+          <span class="ttl">{{ page.previous.title }}</span>
+        </a>
+      {% else %}<span></span>{% endif %}
+      {% if page.next %}
+        <a href="{{ page.next.url }}" class="next">
+          <span class="dir">Next →</span>
+          <span class="ttl">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="/{{ cat | default: 'blog' }}/" class="link-arrow justify-center">More {{ cat | default: 'stories' }} stories</a>
+    </div>
+  </div>
+</article>
